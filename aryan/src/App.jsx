@@ -39,35 +39,35 @@
 // }
 // export default App
 
-// function App(){
-//   const firstname = 'test'
-//   return (
-//     <div>
-//       <Button title="Register" color="orange"/>
-//       <Button title="login" color="white"/>
-//       <Button title="Add to cart" color="green"/>
-//     </div>
-//   )
-// }
-// function Button({title,color}){
-//   console.log(title,color)
-//   return <button style={{backgroundColor:color}}>{title}</button>
-// }
-// export default App;
-
 function App(){
-  const handletLoginClick =()=>{
-    alert('login click')
-  } 
-  const handlePrintName =(name)=>{
-    alert('Hello Aryan')
-  }
-  return(
+  const firstname = 'test'
+  return (
     <div>
-      <button onClick={()=> console.log('hi')}>click</button>
-      <button onClick={handletLoginClick}>login</button>
-      <button onClick={()=>{handlePrintName('test')}}>Print Name</button>
+      <Button title="Register" color="orange"/>
+      <Button title="login" color="white"/>
+      <Button title="Add to cart" color="green"/>
     </div>
   )
 }
-export default App
+function Button({title,color}){
+  console.log(title,color)
+  return <button style={{backgroundColor:color}}>{title}</button>
+}
+export default App;
+
+// function App(){
+//   const handletLoginClick =()=>{
+//     alert('login click')
+//   } 
+//   const handlePrintName =(name)=>{
+//     alert('Hello Aryan')
+//   }
+//   return(
+//     <div>
+//       <button onClick={()=> console.log('hi')}>click</button>
+//       <button onClick={handletLoginClick}>login</button>
+//       <button onClick={()=>{handlePrintName('test')}}>Print Name</button>
+//     </div>
+//   )
+// }
+// export default App
