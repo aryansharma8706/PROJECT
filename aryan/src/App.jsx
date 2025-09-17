@@ -95,32 +95,32 @@
 //create three state variables like name , email , password ;
 // update all this at once when user click on a button
 
-import { useState } from 'react';
-function App() {
-  console.log(useState('REACT'));
-  let [newTechnology, setNewTechnology] = useState('ANGULAR');
- const [name , setName] = useState('TEST')
- const [email,setEmail] = useState('test@gmail.com')
- const [password ,setPassword] = useState('2421@123') ;
+// import { useState } from 'react';
+// function App() {
+//   console.log(useState('REACT'));
+//   let [newTechnology, setNewTechnology] = useState('ANGULAR');
+//  const [name , setName] = useState('TEST')
+//  const [email,setEmail] = useState('test@gmail.com')
+//  const [password ,setPassword] = useState('2421@123') ;
 
-  const handleClick = () => {
-    setNewTechnology('REACT');
-  };
-  const handleUpdateClick = () => {
-    setName('NEW-TEST')
-    setPassword('12345')
-    setEmail('newtest@gmail.com')
-  }
-  return (
-    <div>
-      <h1>{newTechnology}</h1>
-      <h1>{`${name} ${email} ${password}`}</h1>
-      <button onClick={handleUpdateClick}>Click to update</button>
-      <button onClick={handleClick}>Update</button>
-    </div>
-  );
-}
-export default App;
+//   const handleClick = () => {
+//     setNewTechnology('REACT');
+//   };
+//   const handleUpdateClick = () => {
+//     setName('NEW-TEST')
+//     setPassword('12345')
+//     setEmail('newtest@gmail.com')
+//   }
+//   return (
+//     <div>
+//       <h1>{newTechnology}</h1>
+//       <h1>{`${name} ${email} ${password}`}</h1>
+//       <button onClick={handleUpdateClick}>Click to update</button>
+//       <button onClick={handleClick}>Update</button>
+//     </div>
+//   );
+// }
+// export default App;
 
 //hooks  => HOOKS ARE THE REACT FUNCTIONS
 //NOTE HOOKS CAN ONLY BE CALLED INSIDE THE FUNCTIONAL COMPONENT AT TOP LEVEL
@@ -140,3 +140,18 @@ export default App;
 
 //create a button when i click on the button changes its text .
 //create two button when i click on a button swap both btns title ;
+
+function App(){
+  return (
+    <div>
+      <form>
+      <label>Email</label>
+      <input type="Email" placeholder="Enter your Email" name="email"></input>
+      <label>Password</label>
+      <input type="password" placeholder="password" name="password"></input>
+      <button>Submit</button>
+      </form>
+    </div>
+  )
+}
+export default App
