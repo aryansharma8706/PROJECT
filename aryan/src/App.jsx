@@ -55,21 +55,45 @@
 // }
 // export default App;
 
-function App(){
-  const handletLoginClick =()=>{
-    alert('login click')
-  } 
-  const handlePrintName =(name)=>{
-    alert('Hello Aryan')
-  }
-  return(
-    <div>
-      <button onClick={()=> console.log('hi')}>click</button>
-      <button onClick={handletLoginClick}>login</button>
-      <button onClick={()=>{handlePrintName('test')}}>Print Name</button>
-    </div>
-  )
-}
-export default App
+// function App(){
+//   const handletLoginClick =()=>{
+//     alert('login click')
+//   } 
+//   const handlePrintName =(name)=>{
+//     alert('Hello Aryan')
+//   }
+//   return(
+//     <div>
+//       <button onClick={()=> console.log('hi')}>click</button>
+//       <button onClick={handletLoginClick}>login</button>
+//       <button onClick={()=>{handlePrintName('test')}}>Print Name</button>
+//     </div>
+//   )
+// }
+// export default App
 
-console.log("Hello Aryan");
+import { useState } from 'react';
+function App() {
+  console.log(useState('REACT'));
+  let [newTechnology, setNewTechnology] = useState('ANGULAR');
+  console.log(newTechnology);
+
+  const handleClick = () => {
+    setNewTechnology('REACT');
+  };
+  return (
+    <div>
+      <h1>{newTechnology}</h1>
+      <button onClick={handleClick}>Update</button>
+    </div>
+  );
+}
+
+export default App;
+
+//hooks  => js function
+
+
+//create three state variables like name , email , password ;
+
+// update all this at once when user click on a button
