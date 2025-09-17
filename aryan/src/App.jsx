@@ -95,11 +95,10 @@
 //create three state variables like name , email , password ;
 // update all this at once when user click on a button
 
-import { useState } from 'react';   
+import { useState } from 'react';
 function App() {
   console.log(useState('REACT'));
   let [newTechnology, setNewTechnology] = useState('ANGULAR');
-  console.log(newTechnology);
  const [name , setName] = useState('TEST')
  const [email,setEmail] = useState('test@gmail.com')
  const [password ,setPassword] = useState('2421@123') ;
@@ -121,5 +120,24 @@ function App() {
     </div>
   );
 }
-export default App
+export default App;
+
+//hooks  => HOOKS ARE THE REACT FUNCTIONS
+//NOTE HOOKS CAN ONLY BE CALLED INSIDE THE FUNCTIONAL COMPONENT AT TOP LEVEL
+//NOTE hooks allow us to use react features like state
+//NOTE State refers to that data which changes over the time
+//NOTE TO SAVE this type of data we use state varible
+//NOTE TO manage state data we use react's useState() hook 
+//NOTE UseState accepts initial value as a argument 
+//NOTE useState struture 
+// const [stateVariableName , setStateVariableFnName] = useState(initialvalue of stateVariable)
+//NOTE The work of stateVariableName is to show data on the ui
+//NOTE this state varaible only going to update using the setter function
+//NOTE we can directly update the state variable like this stateVariable = 'some value' ❌ always use the setter function to update the state variable
+
+//create three state variables like name , email , password ;
+// update all this at once when user click on a button
+
+//create a button when i click on the button changes its text .
+//create two button when i click on a button swap both btns title ;
 
