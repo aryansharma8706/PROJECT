@@ -175,7 +175,7 @@ function App() {
       <form onSubmit={handleSubmit}>
         <label>Email</label>
         <input onChange={handleEmailChange} type="email" name="email" />
-        <label>Password</label>
+        <label>  Password</label>
         <input
           onChange={handlePasswordChange}
           type="password"
