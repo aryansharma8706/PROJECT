@@ -191,17 +191,31 @@
 // export default App;
 
 //LIST RENDERING
-import React from 'react'
+// import React from 'react'
+// function App() {
+//   const NumberList = [1,2,3,4,5,6];
+//   return (
+//     <div>
+//     {NumberList.map((num)=>(
+//       <div key={num}>
+//         <h1>{num}</h1>
+//       </div>
+//     ))}
+//     </div>
+//   )
+// }
+// export default App
+
+import {useState} from 'react'
 
 function App() {
-  const NumberList = [1,2,3,4,5,6];
+  const [list,stelist] = useState(['Mobile','Ac','Tv'])
   return (
     <div>
-    {NumberList.map((num)=>(
-      <div key={num}>
-        <h1>{num}</h1>
-      </div>
-    ))}
+      <form>
+        <input type='text'/>
+        <button>Add Product</button>
+      </form>
     </div>
   )
 }
