@@ -24,6 +24,8 @@
 // }
 // export default Button
 
+const { useState } = require("react");
+
 // import "./App.css"
 
 // const version = 19;
@@ -206,17 +208,34 @@
 // }
 // export default App
 
-import {useState} from 'react'
+// 
 
-function App() {
-  const [list,stelist] = useState(['Mobile','Ac','Tv'])
-  return (
+
+function App(){
+  const [isError , setIsError] = useState(false)
+  const [data , setData] = useState([1,2])
+  const handIsError =()=>{
+    setIsError(!isError)
+  }
+  return(
     <div>
-      <form>
-        <input type='text'/>
-        <button>Add Product</button>
-      </form>
+      {isError ? <h1>Error</h1>: <h1>No Error Found</h1>}
+      <button onClick={handIsError}>
+        {isError ? "Remove error" : "Show error"}
+      </button>
+
+      {isError && (
+        <h1>this is showing using logical shortcircuiting operator</h1>
+      )}
+      {!isError && <h1>There is no error to show</h1>}
+
+      {data.length === 0 ? (
+        <h1>
+          You have no data <button>Refresh</button>
+        </h1>
+      ):(
+        <h1>{data.length}</h1>
+      )}
     </div>
-  )
+  );
 }
-export default App
