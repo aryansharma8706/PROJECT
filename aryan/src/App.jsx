@@ -24,6 +24,7 @@
 // }
 // export default Button
 
+const { useEffect } = require("react");
 const { useState } = require("react");
 
 // import "./App.css"
@@ -192,7 +193,8 @@ const { useState } = require("react");
 // }
 // export default App;
 
-//LIST RENDERING
+// LIST RENDERING
+
 // import React from 'react'
 // function App() {
 //   const NumberList = [1,2,3,4,5,6];
@@ -208,34 +210,69 @@ const { useState } = require("react");
 // }
 // export default App
 
-// 
+
+// function App(){
+//   const [isError , setIsError] = useState(false)
+//   const [data , setData] = useState([1,2])
+//   const handIsError =()=>{
+//     setIsError(!isError)
+//   }
+//   return(
+//     <div>
+//       {isError ? <h1>Error</h1>: <h1>No Error Found</h1>}
+//       <button onClick={handIsError}>
+//         {isError ? "Remove error" : "Show error"}
+//       </button>
+
+//       {isError && (
+//         <h1>this is showing using logical shortcircuiting operator</h1>
+//       )}
+//       {!isError && <h1>There is no error to show</h1>}
+
+//       {data.length === 0 ? (
+//         <h1>
+//           You have no data <button>Refresh</button>
+//         </h1>
+//       ):(
+//         <h1>{data.length}</h1>
+//       )}
+//     </div>
+//   );
+// }
 
 
-function App(){
-  const [isError , setIsError] = useState(false)
-  const [data , setData] = useState([1,2])
-  const handIsError =()=>{
-    setIsError(!isError)
-  }
-  return(
-    <div>
-      {isError ? <h1>Error</h1>: <h1>No Error Found</h1>}
-      <button onClick={handIsError}>
-        {isError ? "Remove error" : "Show error"}
-      </button>
+// import React from 'react';
+// import { useEffect , useState } from 'react';
+// function App() {
+//   const [products,setProduct] = useState([])
+//   const [selectedId , setSelectedId] = useState(null);
+//   useEffect(() => {
+//     fetch('https://fakestoreapi.com/products')
+//       .then((res) => res.json())
+//       .then((data) => {
+//         setProduct(data)
+//       });
+//   }, []);
+//   const handleSelectChange = (e) => {
+//     setSelectedId(e.target.value)
+//   }
 
-      {isError && (
-        <h1>this is showing using logical shortcircuiting operator</h1>
-      )}
-      {!isError && <h1>There is no error to show</h1>}
+//   useEffect(()=>{
+//     fetch('https://fakestoreapi.com/products/${selectedId}')
+//     .then((res) => res.json())
+//     .then((data) => {
+//      console.log(data)
+//     });
+//   },[selectedId])
+  
+//   return <div>
+//     <select onChange={handleSelectChange} >
+//       {products.map((product)=>(
+//         <option value={product.id}>{product.title}</option>
+//       ))}
+//     </select>
+//     <h1>{selectedId}</h1>
+//   </div>;
+// }
 
-      {data.length === 0 ? (
-        <h1>
-          You have no data <button>Refresh</button>
-        </h1>
-      ):(
-        <h1>{data.length}</h1>
-      )}
-    </div>
-  );
-}
+// export default App;
