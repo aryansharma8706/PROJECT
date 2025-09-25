@@ -24,8 +24,6 @@
 // }
 // export default Button
 
-const { useEffect } = require("react");
-const { useState } = require("react");
 
 // import "./App.css"
 
@@ -298,5 +296,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
