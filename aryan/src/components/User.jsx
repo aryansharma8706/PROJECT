@@ -2,7 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { DataContext } from '../context/DataContext.jsx';
 function User({ username }) {
-const {name , setname } = useContext(DataContext)
+// const {name , setname } = useContext(DataContext)
 console.log(name)
   return (
     <div className="border p-6 border-blue-500 m-3 rounded-sm">
