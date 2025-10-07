@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
-import { DataContext } from '../context/DataContext';
+import { DataContext } from '../context/DataContext.jsx';
 function User({ username }) {
 const {name , setname } = useContext(DataContext)
 console.log(name)

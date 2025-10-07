@@ -1,5 +1,6 @@
 //NOTE STEP1 IMPORT CREATECONTEXT FN FROM REACT ;
 import { createContext  , useState} from "react";
+import React from "react";
 
 //NOTE STEP2 call the createContext fn and save its result with in a variable name same as user context file and export it
  export const DataContext = createContext()
