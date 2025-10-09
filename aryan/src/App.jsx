@@ -169,52 +169,92 @@
 // export default App
 
 
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { increment } from './redux/slices/CounterSlice';
-import { pending, success } from './redux/slices/TodoSlice';
-function App() {
+// import React from 'react';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { useEffect } from 'react';
+// import { increment } from './redux/slices/CounterSlice';
+// import { pending, success } from './redux/slices/TodoSlice';
+// function App() {
 
-  const { count } = useSelector((state) => state);
-  const {loading , todos} = useSelector((state)=>state.todos)
-  const dispatch = useDispatch();
+//   const { count } = useSelector((state) => state);
+//   const {loading , todos} = useSelector((state)=>state.todos)
+//   const dispatch = useDispatch();
 
-  const handleIncrement = () => {
-    dispatch(increment());
-  };
+//   const handleIncrement = () => {
+//     dispatch(increment());
+//   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        dispatch(pending());
-        const response = await fetch(
-          'https://jsonplaceholder.typicode.com/todos'
-        );
-        const data = await response.json();
-dispatch(success(data))
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         dispatch(pending());
+//         const response = await fetch(
+//           'https://jsonplaceholder.typicode.com/todos'
+//         );
+//         const data = await response.json();
+// dispatch(success(data))
       
-      } catch (error) {
+//       } catch (error) {
       
-      }
-    };
-    fetchData();
-  }, []);
+//       }
+//     };
+//     fetchData();
+//   }, []);
+//   return (
+//     <div className="font-bold text-3xl flex h-screen items-center justify-center flex-col">
+//       <h1>{count}</h1>
+//       {/* //replace this with count state variable */}
+//       <button
+//         onClick={handleIncrement}
+//         className="px-10 py-4 bg-blue-300 text-white font-bold"
+//       >
+//         Increment
+//       </button>
+//       {loading && <div className='text-3xl'>Loading....</div>}
+
+//       {todos && !loading && <div>{JSON.stringify(todos)}</div>}
+//     </div>
+//   );
+// }
+
+// export default App;
+
+import React from "react";
+import Product from "./components/Product";
+import Cart from "./components/cart";
+
+const App = () => {
+  const products = [ {
+  id : 1 ,
+  name : 'Samsung  QLED',
+  price : 80000,
+  image : 'https://placehold.co/200'
+},{
+  id : 2 ,
+  name : 'Lg Washing Machine',
+  price : 25000,
+image : 'https://placehold.co/200'
+},{id : 3 ,
+  name : 'Daikin Ac',
+  price : 50000,
+  image : 'https://placehold.co/200'
+},{id : 4 ,
+  name : 'Apple Iphone',
+  price : 80000,
+  image : 'https://placehold.co/200'
+}]
+
   return (
-    <div className="font-bold text-3xl flex h-screen items-center justify-center flex-col">
-      <h1>{count}</h1>
-      {/* //replace this with count state variable */}
-      <button
-        onClick={handleIncrement}
-        className="px-10 py-4 bg-blue-300 text-white font-bold"
-      >
-        Increment
-      </button>
-      {loading && <div className='text-3xl'>Loading....</div>}
-
-      {todos && !loading && <div>{JSON.stringify(todos)}</div>}
+    <div className="p-10 grid grid-cols-2 gap-10">
+      <div>
+        <h1 className="text-xl font-bold mb-4">Products</h1>
+        {products.map((p) => (
+          <Product key={p.id} product={p} />
+        ))}
+      </div>
+      <Cart />
     </div>
   );
-}
+};
 
 export default App;
