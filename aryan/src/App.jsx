@@ -176,7 +176,7 @@ import { increment } from './redux/slices/CounterSlice';
 import { pending, success } from './redux/slices/TodoSlice';
 function App() {
 
-  const { count } = useSelector((state) => state.count);
+  const { count } = useSelector((state) => state);
   const {loading , todos} = useSelector((state)=>state.todos)
   const dispatch = useDispatch();
 
